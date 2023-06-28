@@ -2,5 +2,6 @@ flask
 mysql-connector-python
 opencv-python
 opencv-contrib-python
+opencv-python-headless
 Pillow
 numpy
