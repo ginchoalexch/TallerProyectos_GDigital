@@ -10,12 +10,22 @@
 <section class="py-1">
     <div class="row mt-5">
         <div class="col-md-7 offset-lg-2">
-            <img src="{{ url_for('video_feed') }}" width="100%" class="img-thumbnail">
+            <img src="{{ url_for('video_feed') }}" width="100%" class="img-thumbnail" id="videoElement">
         </div>
     </div>
 
 
 </section>
+<script>
+    var video = document.querySelector("#videoElement");
 
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({video: true}).then(function(stream) {
+            video.srcObject = stream;
+        }).catch(function(err0r) {
+            console.log("Something went wrong!");
+        });
+        }
+</script>
 </body>
 </html>
